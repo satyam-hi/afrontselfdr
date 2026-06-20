@@ -27,15 +27,15 @@ export default function Footer(){
                       </h2>
     
                       <p className="text-sm text-orange-300">
-                        Restaurant SaaS Platform
+                        SaaS Platform
                       </p>
                     </div>
     
                   </div>
     
                   <p className="text-gray-400 mt-6 leading-7">
-                    Smart self-ordering kiosk and restaurant management platform
-                    for restaurants, cafés, hotels and food courts.
+                    Smart self-ordering kiosk and  management platform
+                    for Medical Facilities.
                   </p>
     
                   {/* SOCIAL */}
@@ -88,7 +88,7 @@ export default function Footer(){
                     >
                       Home
                     </Link>
-    
+{/*     
                     <Link
                       href="/about"
                       className="text-gray-400 hover:text-orange-400 transition"
@@ -115,7 +115,7 @@ export default function Footer(){
                       className="text-gray-400 hover:text-orange-400 transition"
                     >
                       Support
-                    </Link>
+                    </Link> */}
     
                   </div>
     
@@ -130,7 +130,7 @@ export default function Footer(){
     
                   <div className="flex flex-col gap-4">
     
-                    <Link
+                    {/* <Link
                       href="/privacy-policy"
                       className="text-gray-400 hover:text-orange-400 transition"
                     >
@@ -157,7 +157,7 @@ export default function Footer(){
                     >
                       Shipping Policy
                     </Link>
-    
+     */}
                     <Link
                       href="/contact"
                       className="text-gray-400 hover:text-orange-400 transition"

@@ -1,65 +1,49 @@
 import Link from "next/link";
-import  Footer from "@/app/component/web/footer"
-
+import Footer from "@/app/component/web/footer";
 
 export default function HomePage() {
   const features = [
     {
-      icon: "🛒",
-      title: "Self Ordering Kiosk",
-      desc: "Customers can place orders directly from the mobile  or kiosk screens themselves.",
+      icon: "📅",
+      title: "Smart Appointment Booking",
+      desc: "Patients can schedule appointments directly from their mobile devices or clinic kiosks.",
     },
     {
       icon: "📱",
-      title: "QR Table Ordering",
-      desc: "Scan QR from table and order instantly.",
+      title: "QR Code Check-In",
+      desc: "Scan QR code upon arrival at the clinic to instantly check-in and view queue status.",
     },
     {
       icon: "💳",
-      title: "Online & Offline Payments",
-      desc: "Accept UPI, cards, wallets and cash payments.",
+      title: "Secure Medical Payments",
+      desc: "Accept UPI, credit/debit cards, insurance processing, and cash payments seamlessly.",
     },
     {
-      icon: "🍽️",
-      title: "Dine In & Packaging",
-      desc: "Support dine-in, takeaway and packing orders.",
+      icon: "🩺",
+      title: "OPD & Teleconsultation",
+      desc: "Comprehensive support for physical in-clinic visits and virtual video consultations.",
     },
     {
       icon: "📊",
-      title: "Analytics Dashboard",
-      desc: "Track sales, revenue and top-selling products.",
+      title: "Patient Analytics Dashboard",
+      desc: "Track daily appointments, clinic revenue, and patient demographics easily.",
     },
     {
-      icon: "🏨",
-      title: "Multi Restaurant Support",
-      desc: "Restaurants and hotels can register and manage.",
+      icon: "🏥",
+      title: "Multi-Clinic Support",
+      desc: "Doctors and medical centers can register and manage multiple branches seamlessly.",
     },
   ];
 
-  // const pricing = [
-  //   {
-  //     name: "Starter",
-  //     price: "₹29",
-  //   },
-  //   {
-  //     name: "Business",
-  //     price: "₹79",
-  //   },
-  //   {
-  //     name: "Enterprise",
-  //     price: "₹199",
-  //   },
-  // ];
-    const pricing = [
+  const pricing = [
     {
       name: "Free Trial",
       price: "free",
     },
     {
-      name: "Online with offline",
-      price: "₹ 444/month",
+      name: "Clinic Pro Plan",
+      price: "₹ 244/month",
     },
-
   ];
 
   return (
@@ -68,34 +52,32 @@ export default function HomePage() {
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center px-6">
 
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/10 to-yellow-500/20 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 via-blue-500/10 to-emerald-500/20 blur-3xl" />
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
 
           {/* LEFT */}
           <div className="animate-fadeIn">
 
-            <div className="inline-block px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-300 mb-6 mt-4">
-              Smart Restaurant SaaS Platform
+            <div className="inline-block px-4 py-2 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 mb-6 mt-4">
+              Smart Medical & Clinic SaaS Platform
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-black leading-tight">
-              Smart Self Ordering
-              <span className="text-orange-500"> Kiosk System </span>
-              For Restaurants & Hotels
+              Smart Patient 
+              <span className="text-teal-500"> Management </span>
+              For Clinics & Doctors
             </h1>
 
             <p className="mt-8 text-gray-300 text-xl leading-relaxed max-w-xl">
-              Manage orders, products, tables, payments and restaurant earnings
-              from one modern platform. Perfect for restaurants, cafés, hotels
-              and food courts.
+              Manage appointments, patient records, digital prescriptions, billing, and clinic earnings 
+              from one modern platform. Perfect for private practices, clinics, and health centers.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-10">
-             <Link href="/register-provider">
-                <button className="bg-orange-500 hover:bg-orange-600 transition px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-orange-500/30">
-                  {/* Start Free Trial */}
-                  Start 
+              <Link href="/register-provider">
+                <button className="bg-teal-500 hover:bg-teal-600 transition px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg shadow-teal-500/30">
+                  Start Free Trial
                 </button>
               </Link>
 
@@ -109,17 +91,17 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-6 mt-12">
 
               <div>
-                <h2 className="text-3xl font-bold text-orange-400">500+</h2>
-                <p className="text-gray-400">Restaurants</p>
+                <h2 className="text-3xl font-bold text-teal-400">500+</h2>
+                <p className="text-gray-400">Practitioners</p>
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-orange-400">20K+</h2>
-                <p className="text-gray-400">Daily Orders</p>
+                <h2 className="text-3xl font-bold text-teal-400">20K+</h2>
+                <p className="text-gray-400">Daily Bookings</p>
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-orange-400">99.9%</h2>
+                <h2 className="text-3xl font-bold text-teal-400">99.9%</h2>
                 <p className="text-gray-400">Uptime</p>
               </div>
 
@@ -134,21 +116,21 @@ export default function HomePage() {
 
               <div className="flex justify-between items-center mb-8">
                 <div>
-                  <p className="text-gray-400">Restaurant Dashboard</p>
+                  <p className="text-gray-400">Medical Dashboard</p>
                   <h3 className="text-2xl font-bold mt-2">
-                    Royal Food Plaza
+                    Royal Health Plaza
                   </h3>
                 </div>
 
-                <div className="w-14 h-14 rounded-2xl bg-orange-500 flex items-center justify-center text-2xl">
-                  🍔
+                <div className="w-14 h-14 rounded-2xl bg-teal-500 flex items-center justify-center text-2xl">
+                  🩺
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-5">
 
                 <div className="bg-black/30 rounded-2xl p-5">
-                  <p className="text-gray-400">Orders</p>
+                  <p className="text-gray-400">Appointments</p>
                   <h2 className="text-4xl font-bold mt-3">248</h2>
                 </div>
 
@@ -160,28 +142,28 @@ export default function HomePage() {
                 <div className="bg-black/30 rounded-2xl p-5 col-span-2">
 
                   <div className="flex justify-between mb-3">
-                    <span>Dine In Orders</span>
+                    <span>In-Clinic Visits</span>
                     <span>68%</span>
                   </div>
 
                   <div className="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
-                    <div className="bg-orange-500 h-4 w-[68%] rounded-full"></div>
+                    <div className="bg-teal-500 h-4 w-[68%] rounded-full"></div>
                   </div>
 
                 </div>
 
               </div>
 
-              <div className="mt-6 bg-orange-500 rounded-2xl p-5 flex items-center gap-4">
+              <div className="mt-6 bg-teal-500 rounded-2xl p-5 flex items-center gap-4">
                 <div className="text-3xl">⚡</div>
 
                 <div>
                   <h4 className="font-bold text-lg">
-                    Live Order Processing
+                    Live Patient Processing
                   </h4>
 
                   <p className="text-sm opacity-90">
-                    Kitchen and cashier synced instantly
+                    Doctor cabin and reception desk synced instantly
                   </p>
                 </div>
               </div>
@@ -206,7 +188,7 @@ export default function HomePage() {
             </h2>
 
             <p className="text-gray-400 mt-6 text-xl">
-              Everything needed to run modern restaurants
+              Everything needed to run modern digital clinics
             </p>
 
           </div>
@@ -216,7 +198,7 @@ export default function HomePage() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white/5 border border-white/10 hover:border-orange-500/40 transition-all duration-300 rounded-3xl p-8 hover:-translate-y-2"
+                className="bg-white/5 border border-white/10 hover:border-teal-500/40 transition-all duration-300 rounded-3xl p-8 hover:-translate-y-2"
               >
 
                 <div className="text-5xl mb-6">
@@ -256,13 +238,13 @@ export default function HomePage() {
           <div className="space-y-8">
 
             {[
-              "Restaurant registers on the platform",
-              "Add tables, menu and products",
-              "Customers order from kiosk or QR or directly from the mobile",
-              "Kitchen receives orders instantly",
-              "Payments processed online/offline",
-              "Track earnings and analytics",
-              "Customers can instantly view their order details and order status",
+              "Doctor or clinic registers on the SaaS platform",
+              "Add medical staff, consultant schedules, and services",
+              "Patients book appointments via kiosk, QR code, or directly from mobile",
+              "Doctor's dashboard receives appointment updates instantly",
+              "Consultation charges processed securely online or offline",
+              "Track operational analytics, prescription histories, and earnings",
+              "Patients can instantly view their prescription details and queue status",
             ].map((step, i) => (
 
               <div
@@ -270,7 +252,7 @@ export default function HomePage() {
                 className="flex items-center gap-6 bg-black/40 border border-white/10 rounded-3xl p-6"
               >
 
-                <div className="min-w-[60px] h-[60px] rounded-full bg-orange-500 flex items-center justify-center text-2xl font-bold">
+                <div className="min-w-[60px] h-[60px] rounded-full bg-teal-500 flex items-center justify-center text-2xl font-bold">
                   {i + 1}
                 </div>
 
@@ -307,7 +289,7 @@ export default function HomePage() {
                 key={i}
                 className={`rounded-3xl p-10 border ${
                   i === 1
-                    ? "bg-orange-500 border-orange-400 scale-105"
+                    ? "bg-teal-500 border-teal-400 scale-105"
                     : "bg-white/5 border-white/10"
                 }`}
               >
@@ -321,16 +303,17 @@ export default function HomePage() {
                 </div>
 
                 <ul className="space-y-4 mt-10 text-lg">
-                  <li>✔ Unlimited Orders</li>
-                  <li>✔ QR Ordering</li>
+                  <li>✔ Unlimited Appointments</li>
+                  <li>✔ QR Code Check-In</li>
                   <li>✔ Analytics Dashboard</li>
-                  {/* <li>✔ Online Payments</li> */}
-                  <li>✔  Payments</li>
+                  <li>✔ Digital Prescriptions</li>
                 </ul>
 
-                <Link href="/register-provider"><button className="mt-10 w-full bg-black text-white py-4 rounded-2xl font-bold text-lg hover:bg-gray-900 transition">
-                  Choose Plan
-                </button></Link>
+                <Link href="/register-provider">
+                  <button className="mt-10 w-full bg-black text-white py-4 rounded-2xl font-bold text-lg hover:bg-gray-900 transition">
+                    Choose Plan
+                  </button>
+                </Link>
 
               </div>
 
@@ -345,14 +328,14 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-32 px-6">
 
-        <div className="max-w-5xl mx-auto text-center bg-gradient-to-r from-orange-500 to-red-500 rounded-[40px] p-16">
+        <div className="max-w-5xl mx-auto text-center bg-gradient-to-r from-teal-500 to-blue-600 rounded-[40px] p-16">
 
           <h2 className="text-5xl font-black leading-tight">
-            Ready To Transform Your Restaurant?
+            Ready To Transform Your Medical Practice?
           </h2>
 
           <p className="mt-6 text-xl text-white/90">
-            Launch your self-ordering restaurant platform today.
+            Launch your smart clinical management and patient ordering platform today.
           </p>
 
           <Link href="/register-provider">
@@ -365,138 +348,9 @@ export default function HomePage() {
 
       </section>
 
-      
       {/* FOOTER */}
-
       <Footer />
-
-
-
-      {/* <footer className="border-t border-white/10 py-10 px-6">
-
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6">
-
-          <div>
-            <h3 className="text-3xl font-black text-orange-500">
-              KioskCloud
-            </h3>
-
-            <p className="text-gray-400 mt-3">
-              Smart restaurant ordering SaaS platform.
-            </p>
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-               <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms & Conditions</Link>
-              <Link href="/refund-policy">Refund Policy</Link>
-              <Link href="/shipping-policy">Shipping Policy</Link>
-              <Link href="/support">Support</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
-
-          <div className="text-gray-400">
-            © 2026 KioskCloud. All rights reserved.
-          </div>
-
-
-        </div>
-
-      </footer> */}
-      {/* FOOTER */}
-   
 
     </main>
   );
 }
-
-
-// import Link from "next/link"
-
-
-// export default function WebHome() {
-//   return (
-
-//     <main className="w-full">
-
-//       {/* HERO SECTION */}
-//       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-//         <div className="max-w-6xl mx-auto px-6 py-24 text-center">
-//           <h1 className="text-5xl font-bold mb-6">
-//             your sods
-//           </h1>
-
-//         </div>
-//       </section>
-
-//       <section className="bg-gradient-to-r from-black-600 to-black-800 text-white">
-//         <div className="max-w-6xl mx-auto px-6 py-24 text-center">
-
-          
-
-//         </div>
-//       </section>
-
-
-
-//     </main>
-
-//   );
-// }
-
-
-
-
-// "use client";
-// import { useState } from "react";
-
-// export default function Page() {
-//   const [pickup, setPickup] = useState("");
-//   const [drop, setDrop] = useState("");
-//   const [date, setDate] = useState("");
-//   const [time, setTime] = useState("");
-
-//   const handleSubmit = () => {
-//     alert(`Cab booked from ${pickup} to ${drop} on ${date} at ${time}`);
-//   };
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-//       <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-6">
-//         <h1 className="text-2xl font-bold mb-6 text-center">Book Your Cab</h1>
-
-//         <div className="space-y-4">
-//           <input
-//             placeholder="Pickup Location"
-//             value={pickup}
-//             onChange={(e) => setPickup(e.target.value)}
-//             className="w-full p-3 border rounded-xl"
-//           />
-//           <input
-//             placeholder="Drop Location"
-//             value={drop}
-//             onChange={(e) => setDrop(e.target.value)}
-//             className="w-full p-3 border rounded-xl"
-//           />
-//           <input
-//             type="date"
-//             value={date}
-//             onChange={(e) => setDate(e.target.value)}
-//             className="w-full p-3 border rounded-xl"
-//           />
-//           <input
-//             type="time"
-//             value={time}
-//             onChange={(e) => setTime(e.target.value)}
-//             className="w-full p-3 border rounded-xl"
-//           />
-//           <button
-//             onClick={handleSubmit}
-//             className="w-full bg-blue-600 text-white p-3 rounded-xl text-lg hover:bg-blue-700 transition"
-//           >
-//             Book Now
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

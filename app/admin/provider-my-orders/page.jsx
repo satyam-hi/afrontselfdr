@@ -331,6 +331,7 @@ const handlePrintOrder = (order) => {
             <option value="Pending">Pending</option>
             <option value="Accepted">Accepted</option>
             <option value="Preparing">Preparing</option>
+            <option value="Consulting">Consulting</option>
             <option value="Ready">Ready</option>
             <option value="On The Way">On The Way</option>
             <option value="Completed">Completed</option>
@@ -424,6 +425,9 @@ const handlePrintOrder = (order) => {
                     <p className="text-sm text-gray-600">
                       Setel Status: {order.settleStatus}
                     </p>
+                    <p className="text-sm text-gray-600">
+                      Customer Name: {order.additionalDetails?.customerName || 'N/A'}
+                    </p>
                   </div>
 
                   <div className="text-right">
@@ -468,6 +472,7 @@ const handlePrintOrder = (order) => {
                     <option>Pending</option>
                      <option>Accepted</option>
                     <option>Preparing</option>
+                    <option>Consulting</option>
                     <option>Ready</option>
                     <option>On The Way</option>
                     <option>Completed</option>
@@ -792,6 +797,7 @@ const handlePrintOrder = (order) => {
                     <div>Mobile: {activePrintOrder.customerMobile}</div>
                     <div>Type: {activePrintOrder.ordrType?.toUpperCase()} {activePrintOrder.tableNumber ? `(Table: ${activePrintOrder.tableNumber})` : ''}</div>
                     <div>Payment: {activePrintOrder.paymentMethod} ({activePrintOrder.paymentStatus})</div>
+                    <div>Additional Details: {activePrintOrder.additionalDetails?.customerName ? `Customer Name: ${activePrintOrder.additionalDetails.customerName}` : 'N/A'}</div>
                   </div>
                   
                   <div style={{ borderTop: '1px dashed #000', margin: '10px 0' }}></div>

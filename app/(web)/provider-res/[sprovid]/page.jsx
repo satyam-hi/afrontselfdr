@@ -31,18 +31,19 @@ export default function ProviderKioskPage() {
   const [loading, setLoading] = useState(true);
   const [msg, setMsg] = useState("");
   const [customerMobile, setCustomerMobile] = useState("");
+  const [customerName, setCustomerName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("pay_at_counter");
   const [paymentStatus, setPaymentStatus] = useState("UnPaid");
   const [successToken, setSuccessToken] = useState(null);
   const [gstTake, setGstTake] = useState(false);
   const [tableSystemTake, setTableSystemTake] = useState(false);
-    const [ordrType, setOrderType] = useState("dining");
+    const [ordrType, setOrderType] = useState("At_Medical_Center");
     const [tableNumber, setTableNumber] = useState(0);
   // const [tableSystemTake, setTableSystemTake] = useState(false);
-  //   const [ordrType, setOrderType] = useState("dining");
+  //   const [ordrType, setOrderType] = useState("At_Medical_Center");
   //   const [tableNumber, setTableNumber] = useState(0);
   // const [tableSystemTake, setTableSystemTake] = useState(false);
-  //   const [ordrType, setOrderType] = useState("dining");
+  //   const [ordrType, setOrderType] = useState("At_Medical_Center");
   //   const [tableNumber, setTableNumber] = useState(0);
   const [cartOpen, setCartOpen] = useState(false);
   const [sprovname, setSprovname] = useState("");
@@ -300,7 +301,7 @@ export default function ProviderKioskPage() {
     0
   ));
   // =========================================================
-  // PLACE ORDER
+  // Place & Appoint  Order
   // =========================================================
 
   // async function placeOrder() {
@@ -389,8 +390,8 @@ export default function ProviderKioskPage() {
         totalAmount,
         paymentStatus,
         ordrType,
-        tableNumber
-
+        tableNumber,
+        additionalDetails:{customerName: customerName},
       };
       // console.log("payload", payload)
 
@@ -1135,7 +1136,7 @@ if (!canAccess) {
   //                 onClick={placeOrder}
   //                 className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold"
   //               >
-  //                 Place Order
+  //                 Place & Appoint  Order
   //               </button>
   //             </div>
   //           </>
@@ -1509,6 +1510,17 @@ if (!canAccess) {
                       className="w-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none p-3 rounded-xl"
                       maxLength={10}
                     />
+
+                    <input
+                      type="text"
+                      placeholder="Enter Your Name"
+                      value={customerName}
+                      onChange={(e) =>
+                        setCustomerName(e.target.value)
+                      }
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none p-3 rounded-xl mt-2"
+                      
+                    />
                   </div>)}
 
                   {/* GST */}
@@ -1522,7 +1534,7 @@ if (!canAccess) {
                     </div>
                   )} */}
 
-                                  {/* order type  dining  , packaging   */}
+                                  {/* order type  At_Medical_Center  , At_Home   */}
 
                 <div className="mb-4">
 
@@ -1539,16 +1551,16 @@ if (!canAccess) {
                       <input
                         type="radio"
                         name="ordrType"
-                        value="dining"
+                        value="At_Medical_Center"
                         checked={
-                          ordrType === "dining"
+                          ordrType === "At_Medical_Center"
                         }
                         onChange={(e) =>
                           setOrderType(e.target.value)
                         }
                       />
 
-                      <span>Dining</span>
+                      <span>At Medical Center</span>
                     </label>
 
                     {/* ONLINE */}
@@ -1558,19 +1570,19 @@ if (!canAccess) {
                       <input
                         type="radio"
                         name="ordrType"
-                        value="packaging"
-                        checked={ordrType === "packaging"}
+                        value="At_Home"
+                        checked={ordrType === "At_Home"}
                         onChange={(e) =>
                           setOrderType(e.target.value)
                         }
                       />
 
-                      <span>Packaging</span>
+                      <span>At Home</span>
                     </label>
                   </div>
                 </div>
 
-                <p>{tableSystemTake && ordrType === "dining" ? (<>
+                <p>{tableSystemTake && ordrType === "At_Medical_Center" ? (<>
                 <div className="mb-4">
 
                   <label className="block text-sm font-medium mb-2">
@@ -1698,7 +1710,7 @@ if (!canAccess) {
                       onClick={placeOrder}
                       className="w-full bg-green-600 hover:bg-green-700 active:scale-[0.98] transition text-white py-4 rounded-2xl text-lg font-bold shadow"
                     >
-                      Place Order
+                      Place & Appoint  Order
                     </button>
                   )}
                 </div>
@@ -1815,7 +1827,19 @@ if (!canAccess) {
                       onChange={(e) => setCustomerMobile(e.target.value)}
                       className="w-full border p-3 rounded-xl"
                       maxLength={10}
-                    />)}
+                    />
+                    )}
+
+                       <input
+                      type="text"
+                      placeholder="Enter Your Name"
+                      value={customerName}
+                      onChange={(e) =>
+                        setCustomerName(e.target.value)
+                      }
+                      className="w-full border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none p-3 rounded-xl mt-2"
+                      
+                    />
 
                     {/* GST */}
                     {/* {/* {gstTake && (
@@ -1824,7 +1848,7 @@ if (!canAccess) {
                       </div>
                     )} */}
 
-                                    {/* order type  dining  , packaging   */}
+                                    {/* order type  At_Medical_Center  , At_Home   */}
 
                 <div className="mb-4">
 
@@ -1841,9 +1865,9 @@ if (!canAccess) {
                       <input
                         type="radio"
                         name="ordrType"
-                        value="dining"
+                        value="At_Medical_Center"
                         checked={
-                          ordrType === "dining"
+                          ordrType === "At_Medical_Center"
                         }
                         onChange={(e) =>
                           setOrderType(e.target.value)
@@ -1851,7 +1875,7 @@ if (!canAccess) {
                         className="hidden"
                       />
 
-                      <span>Dining</span>
+                      <span>At_Medical_Center</span>
                     </label>
 
                     {/* ONLINE */}
@@ -1861,20 +1885,20 @@ if (!canAccess) {
                       <input
                         type="radio"
                         name="ordrType"
-                        value="packaging"
-                        checked={ordrType === "packaging"}
+                        value="At_Home"
+                        checked={ordrType === "At_Home"}
                         onChange={(e) =>
                           setOrderType(e.target.value)
                         }
                         className="hidden"
                       />
 
-                      <span>Packaging</span>
+                      <span>At Home</span>
                     </label>
                   </div>
                 </div>
 
-                <p>{tableSystemTake && ordrType === "dining" ? (<>
+                <p>{tableSystemTake && ordrType === "At_Medical_Center" ? (<>
                 <div className="mb-4">
 
                   <label className="block text-sm font-medium mb-2">
@@ -1991,7 +2015,7 @@ if (!canAccess) {
                         }}
                       className="w-full bg-green-600 text-white py-4 rounded-2xl font-bold"
                     >
-                      Place Order
+                      Place & Appoint  Order
                     </button>)}
 
                   </div>
@@ -2183,7 +2207,7 @@ if (!canAccess) {
             <div className="text-5xl mb-4">🎉</div>
 
             <h2 className="text-2xl font-bold mb-2">
-              Order Placed
+              Order & booking  Placed
             </h2>
 
             <p className="text-gray-500 mb-6">
@@ -2369,7 +2393,7 @@ if (!canAccess) {
 //     0
 //   );
 
-//   // PLACE ORDER
+//   // Place & Appoint  Order
 //   async function placeOrder() {
 //     try {
 //       const payload = {
@@ -2594,7 +2618,7 @@ if (!canAccess) {
 //                   onClick={placeOrder}
 //                   className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold"
 //                 >
-//                   Place Order
+//                   Place & Appoint  Order
 //                 </button>
 //               </div>
 //             </>

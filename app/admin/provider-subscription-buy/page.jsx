@@ -15,8 +15,8 @@ export default function ProviderSubscriptionPurchasePage() {
   const [error, setError] = useState("");
 
   const [plans] = useState([
-    { id: "basic", name: "Basic", price: 444, features: ["Add products", "Best analytics", "Email support"] },
-    { id: "pro", name: "Professional", price: 544, features: ["Add Unlimited products", "Advanced analytics", "Priority support", "Custom Qr Codes"] },
+    { id: "basic", name: "Basic", price: 244, features: ["Add products", "Best analytics", "Email support"] },
+    { id: "pro", name: "Professional", price: 444, features: ["Add Unlimited products", "Advanced analytics", "Priority support", "Custom Qr Codes"] },
     // { id: "enterprise", name: "Enterprise", price: 1999, features: ["Everything in Pro", "API access", "Dedicated account manager", "Custom integrations"] },
   ]);
 
@@ -60,6 +60,7 @@ export default function ProviderSubscriptionPurchasePage() {
         // Fetch subscription data
         const subscriptionRes = await fetch(
           `${backendBase}/api/providers/subscription/${cookieData.id}`
+          
         );
         const subscriptionResponse = await subscriptionRes.json();
 

@@ -125,6 +125,17 @@ export default function UserDashboardHome({ id } ) {
             </button>
           </Link>
 
+
+          <Link
+            href={`/admin/creat-orders/${user?.sprovid}`}
+          >
+            <button
+              className="bg-white text-blue-700 hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition"
+            >
+              Create New Order
+            </button>
+          </Link>
+
         </div>
 
       </section>
